@@ -1,6 +1,10 @@
 import tkinter as tk
 from tkinter import messagebox
 import subprocess
+import json
+
+file = open('settings.json', encoding='utf8')
+settings = json.load(file)
 
 def center_window(window, width_percentage=0.25, height_percentage=0.25):
     window.update_idletasks()
@@ -12,8 +16,8 @@ def center_window(window, width_percentage=0.25, height_percentage=0.25):
 
 def on_yes():
     def check_confirmation(event=None):
-        if entry.get() == "Estudié más de 2 horas hoy":
-            subprocess.run(r'"C:\Riot Games\Riot Client\RiotClientServices.exe" --launch-product=valorant --launch-patchline=live', shell=True)
+        if entry.get() == settings["message"][1]:
+            subprocess.run(rf'{settings["exe_path"]} --launch-product={settings["launch_product"]} --launch-patchline=live', shell=True)
             confirmation_window.destroy()
             root.destroy()
         else:
@@ -22,7 +26,7 @@ def on_yes():
     confirmation_window = tk.Toplevel(root)
     confirmation_window.title("Confirmación")
 
-    label = tk.Label(confirmation_window, text="Ok, confirmá escribiendo la frase:\n\"Estudié más de 2 horas hoy\"", font=("Arial", 12))
+    label = tk.Label(confirmation_window, text=f"Ok, confirmá escribiendo la frase:\n{settings['message'][1]}", font=("Arial", 12))
     label.pack(pady=10)
 
     entry = tk.Entry(confirmation_window, font=("Arial", 12))
@@ -40,7 +44,7 @@ def on_no():
 root = tk.Tk()
 root.title("Recordatorio de Estudio")
 
-label = tk.Label(root, text="¿Ya estudiaste 2 horas hoy?", font=("Arial", 14))
+label = tk.Label(root, text=settings["message"][0], font=("Arial", 14))
 label.pack(pady=20)
 
 button_frame = tk.Frame(root)
