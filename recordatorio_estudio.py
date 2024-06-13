@@ -21,7 +21,9 @@ def on_yes():
 
             if settings["riot_game_args"]["launch_product"] != "":
                 cmd = cmd + f'--launch-product={settings["riot_game_args"]["launch_product"]} --launch-patchline=live'
-
+            elif settings["steam_game_args"]["app_id"] != "":
+                cmd = cmd + f' -applaunch {settings["steam_game_args"]["app_id"]}'
+                
             subprocess.run(cmd, shell=True)
             confirmation_window.destroy()
             root.destroy()
