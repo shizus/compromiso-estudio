@@ -1,7 +1,7 @@
 {
     "message": ["¿Ya estudiaste 2 horas hoy?", "y"],
     "exe_path": "C:\\Windows\\System32\\notepad.exe",
-    "riot_game_params": {
+    "riot_game_args": {
         "launch_product": ""
     }
    

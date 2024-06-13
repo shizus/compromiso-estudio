@@ -19,8 +19,8 @@ def on_yes():
         if entry.get() == settings["message"][1]:
             cmd = rf'"{settings["exe_path"]}"'
 
-            if settings["riot_game_params"]["launch_product"] != "":
-                cmd = cmd + f'--launch-product={settings["riot_game_params"]["launch_product"]} --launch-patchline=live'
+            if settings["riot_game_args"]["launch_product"] != "":
+                cmd = cmd + f'--launch-product={settings["riot_game_args"]["launch_product"]} --launch-patchline=live'
 
             subprocess.run(cmd, shell=True)
             confirmation_window.destroy()
