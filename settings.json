@@ -1,5 +1,5 @@
 {
-    "message": ["¿Ya estudiaste 2 horas hoy?", "y"],
+    "message": ["¿Ya estudiaste 2 horas hoy?", "I have studied for 2 hrs today"],
     "exe_path": "C:\\Windows\\System32\\notepad.exe",
     "riot_game_args": {
         "launch_product": ""
