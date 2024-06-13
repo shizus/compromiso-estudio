@@ -17,7 +17,12 @@ def center_window(window, width_percentage=0.25, height_percentage=0.25):
 def on_yes():
     def check_confirmation(event=None):
         if entry.get() == settings["message"][1]:
-            subprocess.run(rf'"{settings["exe_path"]}" --launch-product={settings["launch_product"]} --launch-patchline=live', shell=True)
+            cmd = rf'"{settings["exe_path"]}"'
+
+            if settings["riot_game_params"]["launch_product"] != "":
+                cmd = cmd + f'--launch-product={settings["riot_game_params"]["launch_product"]} --launch-patchline=live'
+
+            subprocess.run(cmd, shell=True)
             confirmation_window.destroy()
             root.destroy()
         else:

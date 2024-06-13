@@ -1,5 +1,9 @@
 {
-    "message": ["¿Ya estudiaste 2 horas hoy?", "Estudié más de 2 horas hoy"],
-    "exe_path": "C:\\Riot Games\\Riot Client\\RiotClientServices.exe",
-    "launch_product": "valorant"
+    "message": ["¿Ya estudiaste 2 horas hoy?", "y"],
+    "exe_path": "C:\\Windows\\System32\\notepad.exe",
+    "riot_game_params": {
+        "launch_product": ""
+    }
+   
 }
+
