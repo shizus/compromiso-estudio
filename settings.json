@@ -1,12 +1,7 @@
 
 {
-    "message": ["¿Ya estudiaste 2 horas hoy?", "y"],
-    "exe_path": "C:\\Windows\\System32\\notepad.exe",
-    "riot_game_args": {
-        "launch_product": ""
-    },
-    "steam_game_args": {
-        "app_id":  ""
-    }
+    "message": ["¿Ya estudiaste 2 horas hoy?", "Estudié más de 2 horas hoy"],
+    "exe_path": "C:\\Program Files (x86)\\Steam\\steam.exe",
+    "extra_args": [" -applaunch 230410"]
 }
 

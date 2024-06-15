@@ -19,12 +19,12 @@ def on_yes():
         if entry.get() == settings["message"][1]:
             cmd = rf'"{settings["exe_path"]}"'
 
-            if settings["riot_game_args"]["launch_product"] != "":
-                cmd = cmd + f'--launch-product={settings["riot_game_args"]["launch_product"]} --launch-patchline=live'
-            elif settings["steam_game_args"]["app_id"] != "":
-                cmd = cmd + f' -applaunch {settings["steam_game_args"]["app_id"]}'
-                
+            if settings["extra_args"] != "":
+                for arg in settings["extra_args"]:
+                    cmd = cmd + arg
+
             subprocess.run(cmd, shell=True)
+
             confirmation_window.destroy()
             root.destroy()
         else:
