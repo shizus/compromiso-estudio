@@ -2,6 +2,6 @@
 {
     "message": ["¿Ya estudiaste 2 horas hoy?", "Estudié más de 2 horas hoy"],
     "exe_path": "C:\\Program Files (x86)\\Steam\\steam.exe",
-    "extra_args": [" -applaunch 230410"]
+    "extra_args": " -applaunch 230410"
 }
 
