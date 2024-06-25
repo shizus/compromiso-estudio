@@ -20,7 +20,7 @@ def on_yes():
             cmd = rf'"{settings["exe_path"]}"'
 
             if "extra_args" in settings.keys():
-                cmd = cmd + settings["extra_args"]
+                cmd = f"{cmd} {settings["extra_args"]}"
 
             subprocess.run(cmd, shell=True)
 
