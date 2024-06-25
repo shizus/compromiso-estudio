@@ -19,7 +19,7 @@ def on_yes():
         if entry.get() == settings["message"][1]:
             cmd = rf'"{settings["exe_path"]}"'
 
-            if settings["extra_args"] != "":
+            if "extra_args" in settings.keys():
                 cmd = cmd + settings["extra_args"]
 
             subprocess.run(cmd, shell=True)
